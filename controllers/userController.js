@@ -3,7 +3,7 @@
  * @Author: sunmingyuan <fishmooger@gmail.com>
  * @Date: 2023-12-21 15:00:49
  * @LastEditors: sunmingyuan
- * @LastEditTime: 2023-12-21 18:51:52
+ * @LastEditTime: 2023-12-22 10:29:50
  */
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -64,7 +64,7 @@ exports.loginUser = async (req, res) => {
       expiresIn: "1h",
     });
 
-    res.json({ user, token });
+    res.status(200).json({ user, token });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal Server Error" });
